@@ -42,7 +42,8 @@
         <script src="data/Zona3_5.js"></script>
         <script src="data/Zona2_6.js"></script>
         <script src="data/Zona1_7.js"></script>
-        <script src="data/ViasPrincipales_8.js"></script>
+        <script src="data/puntosdesmalezamiento_8.js"></script>
+        <script src="data/ViasPrincipales_9.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
@@ -134,9 +135,9 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 3.0, 
+                weight: 1.0, 
                 fill: true,
-                fillOpacity: 0.3,
+                fillOpacity: 1,
                 fillColor: 'rgba(133,182,111,1.0)',
                 interactive: true,
             }
@@ -182,9 +183,9 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 3.0, 
+                weight: 1.0, 
                 fill: true,
-                fillOpacity: 0.6,
+                fillOpacity: 1,
                 fillColor: 'rgba(35,224,241,1.0)',
                 interactive: true,
             }
@@ -230,9 +231,9 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 3.0, 
+                weight: 1.0, 
                 fill: true,
-                fillOpacity: 0.6,
+                fillOpacity: 1,
                 fillColor: 'rgba(254,129,20,1.0)',
                 interactive: true,
             }
@@ -278,9 +279,9 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 3.0, 
+                weight: 1.0, 
                 fill: true,
-                fillOpacity: 0.6,
+                fillOpacity: 1,
                 fillColor: 'rgba(250,55,52,1.0)',
                 interactive: true,
             }
@@ -326,9 +327,9 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 3.0, 
+                weight: 1.0, 
                 fill: true,
-                fillOpacity: 0.6,
+                fillOpacity: 1,
                 fillColor: 'rgba(255,206,31,1.0)',
                 interactive: true,
             }
@@ -374,9 +375,9 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 3.0, 
+                weight: 1.0, 
                 fill: true,
-                fillOpacity: 0.6,
+                fillOpacity: 1,
                 fillColor: 'rgba(124,57,18,1.0)',
                 interactive: true,
             }
@@ -422,9 +423,9 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 3.0, 
+                weight: 1.0, 
                 fill: true,
-                fillOpacity: 0.6,
+                fillOpacity: 1,
                 fillColor: 'rgba(2,52,202,1.0)',
                 interactive: true,
             }
@@ -443,7 +444,59 @@
         });
         bounds_group.addLayer(layer_Zona1_7);
         map.addLayer(layer_Zona1_7);
-        function pop_ViasPrincipales_8(feature, layer) {
+        function pop_puntosdesmalezamiento_8(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td class="visible-with-data" id="Nombre"colspan="2"><strong>Nombre</strong><br />' + (feature.properties['Nombre'] !== null ? autolinker.link(feature.properties['Nombre'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td class="visible-with-data" id="Actividad"colspan="2"><strong>Actividad</strong><br />' + (feature.properties['Actividad'] !== null ? autolinker.link(feature.properties['Actividad'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
+			layer.on('popupopen', function(e) {
+				addClassToPopupIfMedia(content, e.popup);
+			});
+			layer.bindPopup(content, { maxHeight: 400 });
+        }
+
+        function style_puntosdesmalezamiento_8_0() {
+            return {
+                pane: 'pane_puntosdesmalezamiento_8',
+                radius: 4.800000000000001,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(225,89,137,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_puntosdesmalezamiento_8');
+        map.getPane('pane_puntosdesmalezamiento_8').style.zIndex = 408;
+        map.getPane('pane_puntosdesmalezamiento_8').style['mix-blend-mode'] = 'normal';
+        var layer_puntosdesmalezamiento_8 = new L.geoJson(json_puntosdesmalezamiento_8, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_puntosdesmalezamiento_8',
+            layerName: 'layer_puntosdesmalezamiento_8',
+            pane: 'pane_puntosdesmalezamiento_8',
+            onEachFeature: pop_puntosdesmalezamiento_8,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_puntosdesmalezamiento_8_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_puntosdesmalezamiento_8);
+        map.addLayer(layer_puntosdesmalezamiento_8);
+        function pop_ViasPrincipales_9(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['Nombre'] !== null ? autolinker.link(feature.properties['Nombre'].toLocaleString()) : '') + '</td>\
@@ -456,9 +509,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_ViasPrincipales_8_0() {
+        function style_ViasPrincipales_9_0() {
             return {
-                pane: 'pane_ViasPrincipales_8',
+                pane: 'pane_ViasPrincipales_9',
                 opacity: 1,
                 color: 'rgba(219,30,42,1.0)',
                 dashArray: '',
@@ -469,22 +522,22 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_ViasPrincipales_8');
-        map.getPane('pane_ViasPrincipales_8').style.zIndex = 408;
-        map.getPane('pane_ViasPrincipales_8').style['mix-blend-mode'] = 'normal';
-        var layer_ViasPrincipales_8 = new L.geoJson(json_ViasPrincipales_8, {
+        map.createPane('pane_ViasPrincipales_9');
+        map.getPane('pane_ViasPrincipales_9').style.zIndex = 409;
+        map.getPane('pane_ViasPrincipales_9').style['mix-blend-mode'] = 'normal';
+        var layer_ViasPrincipales_9 = new L.geoJson(json_ViasPrincipales_9, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_ViasPrincipales_8',
-            layerName: 'layer_ViasPrincipales_8',
-            pane: 'pane_ViasPrincipales_8',
-            onEachFeature: pop_ViasPrincipales_8,
-            style: style_ViasPrincipales_8_0,
+            dataVar: 'json_ViasPrincipales_9',
+            layerName: 'layer_ViasPrincipales_9',
+            pane: 'pane_ViasPrincipales_9',
+            onEachFeature: pop_ViasPrincipales_9,
+            style: style_ViasPrincipales_9_0,
         });
-        bounds_group.addLayer(layer_ViasPrincipales_8);
-        map.addLayer(layer_ViasPrincipales_8);
+        bounds_group.addLayer(layer_ViasPrincipales_9);
         var overlaysTree = [
-            {label: '<img src="legend/ViasPrincipales_8.png" /> Vias Principales', layer: layer_ViasPrincipales_8},
+            {label: '<img src="legend/ViasPrincipales_9.png" /> Vias Principales', layer: layer_ViasPrincipales_9},
+            {label: '<img src="legend/puntosdesmalezamiento_8.png" /> puntos desmalezamiento', layer: layer_puntosdesmalezamiento_8},
             {label: '<img src="legend/Zona1_7.png" /> Zona 1', layer: layer_Zona1_7},
             {label: '<img src="legend/Zona2_6.png" /> Zona 2', layer: layer_Zona2_6},
             {label: '<img src="legend/Zona3_5.png" /> Zona 3', layer: layer_Zona3_5},
@@ -595,15 +648,15 @@
               addLabel(layer, i);
               i++;
         });
-        resetLabels([layer_ZonaacargodelaempresaSantaElena_1,layer_Zona6_2,layer_Zona5_3,layer_Zona4_4,layer_Zona3_5,layer_Zona2_6,layer_Zona1_7,layer_ViasPrincipales_8]);
+        resetLabels([layer_ZonaacargodelaempresaSantaElena_1,layer_Zona6_2,layer_Zona5_3,layer_Zona4_4,layer_Zona3_5,layer_Zona2_6,layer_Zona1_7,layer_ViasPrincipales_9]);
         map.on("zoomend", function(){
-            resetLabels([layer_ZonaacargodelaempresaSantaElena_1,layer_Zona6_2,layer_Zona5_3,layer_Zona4_4,layer_Zona3_5,layer_Zona2_6,layer_Zona1_7,layer_ViasPrincipales_8]);
+            resetLabels([layer_ZonaacargodelaempresaSantaElena_1,layer_Zona6_2,layer_Zona5_3,layer_Zona4_4,layer_Zona3_5,layer_Zona2_6,layer_Zona1_7,layer_ViasPrincipales_9]);
         });
         map.on("layeradd", function(){
-            resetLabels([layer_ZonaacargodelaempresaSantaElena_1,layer_Zona6_2,layer_Zona5_3,layer_Zona4_4,layer_Zona3_5,layer_Zona2_6,layer_Zona1_7,layer_ViasPrincipales_8]);
+            resetLabels([layer_ZonaacargodelaempresaSantaElena_1,layer_Zona6_2,layer_Zona5_3,layer_Zona4_4,layer_Zona3_5,layer_Zona2_6,layer_Zona1_7,layer_ViasPrincipales_9]);
         });
         map.on("layerremove", function(){
-            resetLabels([layer_ZonaacargodelaempresaSantaElena_1,layer_Zona6_2,layer_Zona5_3,layer_Zona4_4,layer_Zona3_5,layer_Zona2_6,layer_Zona1_7,layer_ViasPrincipales_8]);
+            resetLabels([layer_ZonaacargodelaempresaSantaElena_1,layer_Zona6_2,layer_Zona5_3,layer_Zona4_4,layer_Zona3_5,layer_Zona2_6,layer_Zona1_7,layer_ViasPrincipales_9]);
         });
         </script>
     </body>
