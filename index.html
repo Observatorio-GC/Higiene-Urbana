@@ -35,14 +35,15 @@
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
         <script src="js/leaflet-measure.js"></script>
-        <script src="data/ZonaacargodelaempresaSantaElena_2.js"></script>
-        <script src="data/Zona6_3.js"></script>
-        <script src="data/Zona5_4.js"></script>
-        <script src="data/Zona4_5.js"></script>
-        <script src="data/Zona3_6.js"></script>
-        <script src="data/Zona2_7.js"></script>
-        <script src="data/Zona1_8.js"></script>
-        <script src="data/Desmalezamientoycunetas_9.js"></script>
+        <script src="data/ZonaacargodelaempresaSantaElena_1.js"></script>
+        <script src="data/Zona6_2.js"></script>
+        <script src="data/Zona5_3.js"></script>
+        <script src="data/Zona4_4.js"></script>
+        <script src="data/Zona3_5.js"></script>
+        <script src="data/Zona2_6.js"></script>
+        <script src="data/Zona1_7.js"></script>
+        <script src="data/Desmalezamientoprogramado_8.js"></script>
+        <script src="data/Desmalezamientorealizado_9.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
@@ -110,19 +111,7 @@
         });
         layer_OSMStandard_0;
         map.addLayer(layer_OSMStandard_0);
-        map.createPane('pane_GoogleSatelital_1');
-        map.getPane('pane_GoogleSatelital_1').style.zIndex = 401;
-        var layer_GoogleSatelital_1 = L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
-            pane: 'pane_GoogleSatelital_1',
-            opacity: 1.0,
-            attribution: '',
-            minZoom: 1,
-            maxZoom: 28,
-            minNativeZoom: 0,
-            maxNativeZoom: 18
-        });
-        layer_GoogleSatelital_1;
-        function pop_ZonaacargodelaempresaSantaElena_2(feature, layer) {
+        function pop_ZonaacargodelaempresaSantaElena_1(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['SECTOR'] !== null ? autolinker.link(feature.properties['SECTOR'].toLocaleString()) : '') + '</td>\
@@ -138,36 +127,36 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_ZonaacargodelaempresaSantaElena_2_0() {
+        function style_ZonaacargodelaempresaSantaElena_1_0() {
             return {
-                pane: 'pane_ZonaacargodelaempresaSantaElena_2',
+                pane: 'pane_ZonaacargodelaempresaSantaElena_1',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 3.0, 
+                eight: 3.0, 
                 fill: true,
                 fillOpacity: 0.4,
                 fillColor: 'rgba(133,182,111,1.0)',
                 interactive: true,
             }
         }
-        map.createPane('pane_ZonaacargodelaempresaSantaElena_2');
-        map.getPane('pane_ZonaacargodelaempresaSantaElena_2').style.zIndex = 402;
-        map.getPane('pane_ZonaacargodelaempresaSantaElena_2').style['mix-blend-mode'] = 'normal';
-        var layer_ZonaacargodelaempresaSantaElena_2 = new L.geoJson(json_ZonaacargodelaempresaSantaElena_2, {
+        map.createPane('pane_ZonaacargodelaempresaSantaElena_1');
+        map.getPane('pane_ZonaacargodelaempresaSantaElena_1').style.zIndex = 401;
+        map.getPane('pane_ZonaacargodelaempresaSantaElena_1').style['mix-blend-mode'] = 'normal';
+        var layer_ZonaacargodelaempresaSantaElena_1 = new L.geoJson(json_ZonaacargodelaempresaSantaElena_1, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_ZonaacargodelaempresaSantaElena_2',
-            layerName: 'layer_ZonaacargodelaempresaSantaElena_2',
-            pane: 'pane_ZonaacargodelaempresaSantaElena_2',
-            onEachFeature: pop_ZonaacargodelaempresaSantaElena_2,
-            style: style_ZonaacargodelaempresaSantaElena_2_0,
+            dataVar: 'json_ZonaacargodelaempresaSantaElena_1',
+            layerName: 'layer_ZonaacargodelaempresaSantaElena_1',
+            pane: 'pane_ZonaacargodelaempresaSantaElena_1',
+            onEachFeature: pop_ZonaacargodelaempresaSantaElena_1,
+            style: style_ZonaacargodelaempresaSantaElena_1_0,
         });
-        bounds_group.addLayer(layer_ZonaacargodelaempresaSantaElena_2);
-        map.addLayer(layer_ZonaacargodelaempresaSantaElena_2);
-        function pop_Zona6_3(feature, layer) {
+        bounds_group.addLayer(layer_ZonaacargodelaempresaSantaElena_1);
+        map.addLayer(layer_ZonaacargodelaempresaSantaElena_1);
+        function pop_Zona6_2(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td class="visible-with-data" id="SECTOR"colspan="2"><strong>SECTOR</strong><br />' + (feature.properties['SECTOR'] !== null ? autolinker.link(feature.properties['SECTOR'].toLocaleString()) : '') + '</td>\
@@ -186,36 +175,36 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Zona6_3_0() {
+        function style_Zona6_2_0() {
             return {
-                pane: 'pane_Zona6_3',
+                pane: 'pane_Zona6_2',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 3.0, 
+                eight: 3.0, 
                 fill: true,
                 fillOpacity: 0.6,
                 fillColor: 'rgba(35,224,241,1.0)',
                 interactive: true,
             }
         }
-        map.createPane('pane_Zona6_3');
-        map.getPane('pane_Zona6_3').style.zIndex = 403;
-        map.getPane('pane_Zona6_3').style['mix-blend-mode'] = 'normal';
-        var layer_Zona6_3 = new L.geoJson(json_Zona6_3, {
+        map.createPane('pane_Zona6_2');
+        map.getPane('pane_Zona6_2').style.zIndex = 402;
+        map.getPane('pane_Zona6_2').style['mix-blend-mode'] = 'normal';
+        var layer_Zona6_2 = new L.geoJson(json_Zona6_2, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Zona6_3',
-            layerName: 'layer_Zona6_3',
-            pane: 'pane_Zona6_3',
-            onEachFeature: pop_Zona6_3,
-            style: style_Zona6_3_0,
+            dataVar: 'json_Zona6_2',
+            layerName: 'layer_Zona6_2',
+            pane: 'pane_Zona6_2',
+            onEachFeature: pop_Zona6_2,
+            style: style_Zona6_2_0,
         });
-        bounds_group.addLayer(layer_Zona6_3);
-        map.addLayer(layer_Zona6_3);
-        function pop_Zona5_4(feature, layer) {
+        bounds_group.addLayer(layer_Zona6_2);
+        map.addLayer(layer_Zona6_2);
+        function pop_Zona5_3(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td class="visible-with-data" id="SECTOR"colspan="2"><strong>SECTOR</strong><br />' + (feature.properties['SECTOR'] !== null ? autolinker.link(feature.properties['SECTOR'].toLocaleString()) : '') + '</td>\
@@ -234,36 +223,36 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Zona5_4_0() {
+        function style_Zona5_3_0() {
             return {
-                pane: 'pane_Zona5_4',
+                pane: 'pane_Zona5_3',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 3.0, 
+                eight: 3.0, 
                 fill: true,
                 fillOpacity: 0.6,
                 fillColor: 'rgba(254,129,20,1.0)',
                 interactive: true,
             }
         }
-        map.createPane('pane_Zona5_4');
-        map.getPane('pane_Zona5_4').style.zIndex = 404;
-        map.getPane('pane_Zona5_4').style['mix-blend-mode'] = 'normal';
-        var layer_Zona5_4 = new L.geoJson(json_Zona5_4, {
+        map.createPane('pane_Zona5_3');
+        map.getPane('pane_Zona5_3').style.zIndex = 403;
+        map.getPane('pane_Zona5_3').style['mix-blend-mode'] = 'normal';
+        var layer_Zona5_3 = new L.geoJson(json_Zona5_3, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Zona5_4',
-            layerName: 'layer_Zona5_4',
-            pane: 'pane_Zona5_4',
-            onEachFeature: pop_Zona5_4,
-            style: style_Zona5_4_0,
+            dataVar: 'json_Zona5_3',
+            layerName: 'layer_Zona5_3',
+            pane: 'pane_Zona5_3',
+            onEachFeature: pop_Zona5_3,
+            style: style_Zona5_3_0,
         });
-        bounds_group.addLayer(layer_Zona5_4);
-        map.addLayer(layer_Zona5_4);
-        function pop_Zona4_5(feature, layer) {
+        bounds_group.addLayer(layer_Zona5_3);
+        map.addLayer(layer_Zona5_3);
+        function pop_Zona4_4(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td class="visible-with-data" id="SECTOR"colspan="2"><strong>SECTOR</strong><br />' + (feature.properties['SECTOR'] !== null ? autolinker.link(feature.properties['SECTOR'].toLocaleString()) : '') + '</td>\
@@ -282,36 +271,36 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Zona4_5_0() {
+        function style_Zona4_4_0() {
             return {
-                pane: 'pane_Zona4_5',
+                pane: 'pane_Zona4_4',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 3.0, 
+                eight: 3.0, 
                 fill: true,
                 fillOpacity: 0.6,
                 fillColor: 'rgba(250,55,52,1.0)',
                 interactive: true,
             }
         }
-        map.createPane('pane_Zona4_5');
-        map.getPane('pane_Zona4_5').style.zIndex = 405;
-        map.getPane('pane_Zona4_5').style['mix-blend-mode'] = 'normal';
-        var layer_Zona4_5 = new L.geoJson(json_Zona4_5, {
+        map.createPane('pane_Zona4_4');
+        map.getPane('pane_Zona4_4').style.zIndex = 404;
+        map.getPane('pane_Zona4_4').style['mix-blend-mode'] = 'normal';
+        var layer_Zona4_4 = new L.geoJson(json_Zona4_4, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Zona4_5',
-            layerName: 'layer_Zona4_5',
-            pane: 'pane_Zona4_5',
-            onEachFeature: pop_Zona4_5,
-            style: style_Zona4_5_0,
+            dataVar: 'json_Zona4_4',
+            layerName: 'layer_Zona4_4',
+            pane: 'pane_Zona4_4',
+            onEachFeature: pop_Zona4_4,
+            style: style_Zona4_4_0,
         });
-        bounds_group.addLayer(layer_Zona4_5);
-        map.addLayer(layer_Zona4_5);
-        function pop_Zona3_6(feature, layer) {
+        bounds_group.addLayer(layer_Zona4_4);
+        map.addLayer(layer_Zona4_4);
+        function pop_Zona3_5(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td class="visible-with-data" id="SECTOR"colspan="2"><strong>SECTOR</strong><br />' + (feature.properties['SECTOR'] !== null ? autolinker.link(feature.properties['SECTOR'].toLocaleString()) : '') + '</td>\
@@ -330,36 +319,36 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Zona3_6_0() {
+        function style_Zona3_5_0() {
             return {
-                pane: 'pane_Zona3_6',
+                pane: 'pane_Zona3_5',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 3.0, 
+                eight: 3.0, 
                 fill: true,
                 fillOpacity: 0.6,
                 fillColor: 'rgba(255,206,31,1.0)',
                 interactive: true,
             }
         }
-        map.createPane('pane_Zona3_6');
-        map.getPane('pane_Zona3_6').style.zIndex = 406;
-        map.getPane('pane_Zona3_6').style['mix-blend-mode'] = 'normal';
-        var layer_Zona3_6 = new L.geoJson(json_Zona3_6, {
+        map.createPane('pane_Zona3_5');
+        map.getPane('pane_Zona3_5').style.zIndex = 405;
+        map.getPane('pane_Zona3_5').style['mix-blend-mode'] = 'normal';
+        var layer_Zona3_5 = new L.geoJson(json_Zona3_5, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Zona3_6',
-            layerName: 'layer_Zona3_6',
-            pane: 'pane_Zona3_6',
-            onEachFeature: pop_Zona3_6,
-            style: style_Zona3_6_0,
+            dataVar: 'json_Zona3_5',
+            layerName: 'layer_Zona3_5',
+            pane: 'pane_Zona3_5',
+            onEachFeature: pop_Zona3_5,
+            style: style_Zona3_5_0,
         });
-        bounds_group.addLayer(layer_Zona3_6);
-        map.addLayer(layer_Zona3_6);
-        function pop_Zona2_7(feature, layer) {
+        bounds_group.addLayer(layer_Zona3_5);
+        map.addLayer(layer_Zona3_5);
+        function pop_Zona2_6(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td class="visible-with-data" id="SECTOR"colspan="2"><strong>SECTOR</strong><br />' + (feature.properties['SECTOR'] !== null ? autolinker.link(feature.properties['SECTOR'].toLocaleString()) : '') + '</td>\
@@ -378,36 +367,36 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Zona2_7_0() {
+        function style_Zona2_6_0() {
             return {
-                pane: 'pane_Zona2_7',
+                pane: 'pane_Zona2_6',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 3.0, 
+                eight: 3.0, 
                 fill: true,
                 fillOpacity: 0.6,
                 fillColor: 'rgba(124,57,18,1.0)',
                 interactive: true,
             }
         }
-        map.createPane('pane_Zona2_7');
-        map.getPane('pane_Zona2_7').style.zIndex = 407;
-        map.getPane('pane_Zona2_7').style['mix-blend-mode'] = 'normal';
-        var layer_Zona2_7 = new L.geoJson(json_Zona2_7, {
+        map.createPane('pane_Zona2_6');
+        map.getPane('pane_Zona2_6').style.zIndex = 406;
+        map.getPane('pane_Zona2_6').style['mix-blend-mode'] = 'normal';
+        var layer_Zona2_6 = new L.geoJson(json_Zona2_6, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Zona2_7',
-            layerName: 'layer_Zona2_7',
-            pane: 'pane_Zona2_7',
-            onEachFeature: pop_Zona2_7,
-            style: style_Zona2_7_0,
+            dataVar: 'json_Zona2_6',
+            layerName: 'layer_Zona2_6',
+            pane: 'pane_Zona2_6',
+            onEachFeature: pop_Zona2_6,
+            style: style_Zona2_6_0,
         });
-        bounds_group.addLayer(layer_Zona2_7);
-        map.addLayer(layer_Zona2_7);
-        function pop_Zona1_8(feature, layer) {
+        bounds_group.addLayer(layer_Zona2_6);
+        map.addLayer(layer_Zona2_6);
+        function pop_Zona1_7(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td class="visible-with-data" id="SECTOR"colspan="2"><strong>SECTOR</strong><br />' + (feature.properties['SECTOR'] !== null ? autolinker.link(feature.properties['SECTOR'].toLocaleString()) : '') + '</td>\
@@ -426,36 +415,36 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Zona1_8_0() {
+        function style_Zona1_7_0() {
             return {
-                pane: 'pane_Zona1_8',
+                pane: 'pane_Zona1_7',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 3.0, 
+                eight: 3.0, 
                 fill: true,
                 fillOpacity: 0.6,
                 fillColor: 'rgba(2,52,202,1.0)',
                 interactive: true,
             }
         }
-        map.createPane('pane_Zona1_8');
-        map.getPane('pane_Zona1_8').style.zIndex = 408;
-        map.getPane('pane_Zona1_8').style['mix-blend-mode'] = 'normal';
-        var layer_Zona1_8 = new L.geoJson(json_Zona1_8, {
+        map.createPane('pane_Zona1_7');
+        map.getPane('pane_Zona1_7').style.zIndex = 407;
+        map.getPane('pane_Zona1_7').style['mix-blend-mode'] = 'normal';
+        var layer_Zona1_7 = new L.geoJson(json_Zona1_7, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Zona1_8',
-            layerName: 'layer_Zona1_8',
-            pane: 'pane_Zona1_8',
-            onEachFeature: pop_Zona1_8,
-            style: style_Zona1_8_0,
+            dataVar: 'json_Zona1_7',
+            layerName: 'layer_Zona1_7',
+            pane: 'pane_Zona1_7',
+            onEachFeature: pop_Zona1_7,
+            style: style_Zona1_7_0,
         });
-        bounds_group.addLayer(layer_Zona1_8);
-        map.addLayer(layer_Zona1_8);
-        function pop_Desmalezamientoycunetas_9(feature, layer) {
+        bounds_group.addLayer(layer_Zona1_7);
+        map.addLayer(layer_Zona1_7);
+        function pop_Desmalezamientoprogramado_8(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td class="visible-with-data" id="Ubicacion"colspan="2"><strong>Ubicacion</strong><br />' + (feature.properties['Ubicacion'] !== null ? autolinker.link(feature.properties['Ubicacion'].toLocaleString()) : '') + '</td>\
@@ -471,9 +460,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Desmalezamientoycunetas_9_0() {
+        function style_Desmalezamientoprogramado_8_0() {
             return {
-                pane: 'pane_Desmalezamientoycunetas_9',
+                pane: 'pane_Desmalezamientoprogramado_8',
                 opacity: 1,
                 color: 'rgba(236,27,20,1.0)',
                 dashArray: '',
@@ -484,30 +473,79 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Desmalezamientoycunetas_9');
-        map.getPane('pane_Desmalezamientoycunetas_9').style.zIndex = 409;
-        map.getPane('pane_Desmalezamientoycunetas_9').style['mix-blend-mode'] = 'normal';
-        var layer_Desmalezamientoycunetas_9 = new L.geoJson(json_Desmalezamientoycunetas_9, {
+        map.createPane('pane_Desmalezamientoprogramado_8');
+        map.getPane('pane_Desmalezamientoprogramado_8').style.zIndex = 408;
+        map.getPane('pane_Desmalezamientoprogramado_8').style['mix-blend-mode'] = 'normal';
+        var layer_Desmalezamientoprogramado_8 = new L.geoJson(json_Desmalezamientoprogramado_8, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Desmalezamientoycunetas_9',
-            layerName: 'layer_Desmalezamientoycunetas_9',
-            pane: 'pane_Desmalezamientoycunetas_9',
-            onEachFeature: pop_Desmalezamientoycunetas_9,
-            style: style_Desmalezamientoycunetas_9_0,
+            dataVar: 'json_Desmalezamientoprogramado_8',
+            layerName: 'layer_Desmalezamientoprogramado_8',
+            pane: 'pane_Desmalezamientoprogramado_8',
+            onEachFeature: pop_Desmalezamientoprogramado_8,
+            style: style_Desmalezamientoprogramado_8_0,
         });
-        bounds_group.addLayer(layer_Desmalezamientoycunetas_9);
-        map.addLayer(layer_Desmalezamientoycunetas_9);
+        bounds_group.addLayer(layer_Desmalezamientoprogramado_8);
+        map.addLayer(layer_Desmalezamientoprogramado_8);
+        function pop_Desmalezamientorealizado_9(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td class="visible-with-data" id="Ubicacion"colspan="2"><strong>Ubicacion</strong><br />' + (feature.properties['Ubicacion'] !== null ? autolinker.link(feature.properties['Ubicacion'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td class="visible-with-data" id="Fecha"colspan="2"><strong>Fecha</strong><br />' + (feature.properties['Fecha'] !== null ? autolinker.link(feature.properties['Fecha'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td class="visible-with-data" id="Sector"colspan="2"><strong>Sector</strong><br />' + (feature.properties['Sector'] !== null ? autolinker.link(feature.properties['Sector'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td class="visible-with-data" id="Actividad"colspan="2"><strong>Actividad</strong><br />' + (feature.properties['Actividad'] !== null ? autolinker.link(feature.properties['Actividad'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
+			layer.on('popupopen', function(e) {
+				addClassToPopupIfMedia(content, e.popup);
+			});
+			layer.bindPopup(content, { maxHeight: 400 });
+        }
+
+        function style_Desmalezamientorealizado_9_0() {
+            return {
+                pane: 'pane_Desmalezamientorealizado_9',
+                opacity: 1,
+                color: 'rgba(127,0,220,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 3.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_Desmalezamientorealizado_9');
+        map.getPane('pane_Desmalezamientorealizado_9').style.zIndex = 409;
+        map.getPane('pane_Desmalezamientorealizado_9').style['mix-blend-mode'] = 'normal';
+        var layer_Desmalezamientorealizado_9 = new L.geoJson(json_Desmalezamientorealizado_9, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Desmalezamientorealizado_9',
+            layerName: 'layer_Desmalezamientorealizado_9',
+            pane: 'pane_Desmalezamientorealizado_9',
+            onEachFeature: pop_Desmalezamientorealizado_9,
+            style: style_Desmalezamientorealizado_9_0,
+        });
+        bounds_group.addLayer(layer_Desmalezamientorealizado_9);
+        map.addLayer(layer_Desmalezamientorealizado_9);
         var overlaysTree = [
-            {label: '<img src="legend/Desmalezamientoycunetas_9.png" /> Desmalezamiento y cunetas', layer: layer_Desmalezamientoycunetas_9},
-            {label: '<img src="legend/Zona1_8.png" /> Zona 1', layer: layer_Zona1_8},
-            {label: '<img src="legend/Zona2_7.png" /> Zona 2', layer: layer_Zona2_7},
-            {label: '<img src="legend/Zona3_6.png" /> Zona 3', layer: layer_Zona3_6},
-            {label: '<img src="legend/Zona4_5.png" /> Zona 4', layer: layer_Zona4_5},
-            {label: '<img src="legend/Zona5_4.png" /> Zona 5', layer: layer_Zona5_4},
-            {label: '<img src="legend/Zona6_3.png" /> Zona 6', layer: layer_Zona6_3},
-            {label: '<img src="legend/ZonaacargodelaempresaSantaElena_2.png" /> Zona a cargo de la empresa Santa Elena', layer: layer_ZonaacargodelaempresaSantaElena_2},
-            {label: "Google Satelital", layer: layer_GoogleSatelital_1},
+            {label: '<img src="legend/Desmalezamientorealizado_9.png" /> Desmalezamiento realizado', layer: layer_Desmalezamientorealizado_9},
+            {label: '<img src="legend/Desmalezamientoprogramado_8.png" /> Desmalezamiento programado', layer: layer_Desmalezamientoprogramado_8},
+            {label: '<img src="legend/Zona1_7.png" /> Zona 1', layer: layer_Zona1_7},
+            {label: '<img src="legend/Zona2_6.png" /> Zona 2', layer: layer_Zona2_6},
+            {label: '<img src="legend/Zona3_5.png" /> Zona 3', layer: layer_Zona3_5},
+            {label: '<img src="legend/Zona4_4.png" /> Zona 4', layer: layer_Zona4_4},
+            {label: '<img src="legend/Zona5_3.png" /> Zona 5', layer: layer_Zona5_3},
+            {label: '<img src="legend/Zona6_2.png" /> Zona 6', layer: layer_Zona6_2},
+            {label: '<img src="legend/ZonaacargodelaempresaSantaElena_1.png" /> Zona a cargo de la empresa Santa Elena', layer: layer_ZonaacargodelaempresaSantaElena_1},
             {label: "OSM Standard", layer: layer_OSMStandard_0},]
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
@@ -521,12 +559,12 @@
         lay.addTo(map);
         setBounds();
         var i = 0;
-        layer_ZonaacargodelaempresaSantaElena_2.eachLayer(function(layer) {
+        layer_ZonaacargodelaempresaSantaElena_1.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['SECTOR'] !== null?String('<div style="color: #323232; font-size: 10pt; font-family: \'Arial\', sans-serif;">' + layer.feature.properties['SECTOR']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_ZonaacargodelaempresaSantaElena_2'});
+            layer.bindTooltip((layer.feature.properties['SECTOR'] !== null?String('<div style="color: #323232; font-size: 10pt; font-family: \'Arial\', sans-serif;">' + layer.feature.properties['SECTOR']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_ZonaacargodelaempresaSantaElena_1'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -534,12 +572,12 @@
               i++;
         });
         var i = 0;
-        layer_Zona6_3.eachLayer(function(layer) {
+        layer_Zona6_2.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['SECTOR'] !== null?String('<div style="color: #323232; font-size: 10pt; font-family: \'Arial\', sans-serif;">' + layer.feature.properties['SECTOR']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Zona6_3'});
+            layer.bindTooltip((layer.feature.properties['SECTOR'] !== null?String('<div style="color: #323232; font-size: 10pt; font-family: \'Arial\', sans-serif;">' + layer.feature.properties['SECTOR']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Zona6_2'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -547,12 +585,12 @@
               i++;
         });
         var i = 0;
-        layer_Zona5_4.eachLayer(function(layer) {
+        layer_Zona5_3.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['SECTOR'] !== null?String('<div style="color: #323232; font-size: 10pt; font-family: \'Arial\', sans-serif;">' + layer.feature.properties['SECTOR']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Zona5_4'});
+            layer.bindTooltip((layer.feature.properties['SECTOR'] !== null?String('<div style="color: #323232; font-size: 10pt; font-family: \'Arial\', sans-serif;">' + layer.feature.properties['SECTOR']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Zona5_3'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -560,12 +598,12 @@
               i++;
         });
         var i = 0;
-        layer_Zona4_5.eachLayer(function(layer) {
+        layer_Zona4_4.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['SECTOR'] !== null?String('<div style="color: #323232; font-size: 10pt; font-family: \'Arial\', sans-serif;">' + layer.feature.properties['SECTOR']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Zona4_5'});
+            layer.bindTooltip((layer.feature.properties['SECTOR'] !== null?String('<div style="color: #323232; font-size: 10pt; font-family: \'Arial\', sans-serif;">' + layer.feature.properties['SECTOR']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Zona4_4'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -573,12 +611,12 @@
               i++;
         });
         var i = 0;
-        layer_Zona3_6.eachLayer(function(layer) {
+        layer_Zona3_5.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['SECTOR'] !== null?String('<div style="color: #323232; font-size: 10pt; font-family: \'Arial\', sans-serif;">' + layer.feature.properties['SECTOR']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Zona3_6'});
+            layer.bindTooltip((layer.feature.properties['SECTOR'] !== null?String('<div style="color: #323232; font-size: 10pt; font-family: \'Arial\', sans-serif;">' + layer.feature.properties['SECTOR']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Zona3_5'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -586,12 +624,12 @@
               i++;
         });
         var i = 0;
-        layer_Zona2_7.eachLayer(function(layer) {
+        layer_Zona2_6.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['SECTOR'] !== null?String('<div style="color: #323232; font-size: 10pt; font-family: \'Arial\', sans-serif;">' + layer.feature.properties['SECTOR']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Zona2_7'});
+            layer.bindTooltip((layer.feature.properties['SECTOR'] !== null?String('<div style="color: #323232; font-size: 10pt; font-family: \'Arial\', sans-serif;">' + layer.feature.properties['SECTOR']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Zona2_6'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -599,27 +637,27 @@
               i++;
         });
         var i = 0;
-        layer_Zona1_8.eachLayer(function(layer) {
+        layer_Zona1_7.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['SECTOR'] !== null?String('<div style="color: #323232; font-size: 10pt; font-family: \'Arial\', sans-serif;">' + layer.feature.properties['SECTOR']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Zona1_8'});
+            layer.bindTooltip((layer.feature.properties['SECTOR'] !== null?String('<div style="color: #323232; font-size: 10pt; font-family: \'Arial\', sans-serif;">' + layer.feature.properties['SECTOR']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Zona1_7'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
               addLabel(layer, i);
               i++;
         });
-        resetLabels([layer_ZonaacargodelaempresaSantaElena_2,layer_Zona6_3,layer_Zona5_4,layer_Zona4_5,layer_Zona3_6,layer_Zona2_7,layer_Zona1_8]);
+        resetLabels([layer_ZonaacargodelaempresaSantaElena_1,layer_Zona6_2,layer_Zona5_3,layer_Zona4_4,layer_Zona3_5,layer_Zona2_6,layer_Zona1_7]);
         map.on("zoomend", function(){
-            resetLabels([layer_ZonaacargodelaempresaSantaElena_2,layer_Zona6_3,layer_Zona5_4,layer_Zona4_5,layer_Zona3_6,layer_Zona2_7,layer_Zona1_8]);
+            resetLabels([layer_ZonaacargodelaempresaSantaElena_1,layer_Zona6_2,layer_Zona5_3,layer_Zona4_4,layer_Zona3_5,layer_Zona2_6,layer_Zona1_7]);
         });
         map.on("layeradd", function(){
-            resetLabels([layer_ZonaacargodelaempresaSantaElena_2,layer_Zona6_3,layer_Zona5_4,layer_Zona4_5,layer_Zona3_6,layer_Zona2_7,layer_Zona1_8]);
+            resetLabels([layer_ZonaacargodelaempresaSantaElena_1,layer_Zona6_2,layer_Zona5_3,layer_Zona4_4,layer_Zona3_5,layer_Zona2_6,layer_Zona1_7]);
         });
         map.on("layerremove", function(){
-            resetLabels([layer_ZonaacargodelaempresaSantaElena_2,layer_Zona6_3,layer_Zona5_4,layer_Zona4_5,layer_Zona3_6,layer_Zona2_7,layer_Zona1_8]);
+            resetLabels([layer_ZonaacargodelaempresaSantaElena_1,layer_Zona6_2,layer_Zona5_3,layer_Zona4_4,layer_Zona3_5,layer_Zona2_6,layer_Zona1_7]);
         });
         </script>
     </body>
