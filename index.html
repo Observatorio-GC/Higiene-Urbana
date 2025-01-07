@@ -19,9 +19,9 @@
             margin: 0;
         }
         </style>
-        <title>Higiene Urbana</title>
-        <!-- Icono -->
-	    <link rel="icon" href="./images/favicon1.ico">
+       <title>Higiene Urbana</title>
+       <!-- Icono -->
+       <link rel="icon" href="./images/favicon1.ico">
     </head>
     <body>
         <div id="map">
@@ -48,6 +48,7 @@
         <script src="data/ANEXO3_8.js"></script>
         <script src="data/ZONA2_9.js"></script>
         <script src="data/ZONA1_10.js"></script>
+        <script src="data/BBancario_11.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
@@ -212,6 +213,7 @@
                 }
             }
 
+
         function style_ZonaDesmalezamiento5_3_0() {
             return {
                 pane: 'pane_ZonaDesmalezamiento5_3',
@@ -328,7 +330,6 @@
                     }
                 }
             }
-
         function style_ZonaDesmalezamiento2_6_0() {
             return {
                 pane: 'pane_ZonaDesmalezamiento2_6',
@@ -414,7 +415,7 @@
         }
 
         var pattern_ANEXO3_8_0 = new L.StripePattern({
-            weight: 1.2,
+            weight: 0.3,
             spaceWeight: 2.0,
             color: '#ff2206',
             opacity: 1.0,
@@ -483,7 +484,7 @@
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
-                fillOpacity: 0.4,
+                fillOpacity: 1,
                 fillColor: 'rgba(152,125,183,1.0)',
                 interactive: true,
             }
@@ -527,7 +528,7 @@
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
-                fillOpacity: 0.4,
+                fillOpacity: 1,
                 fillColor: 'rgba(164,113,88,1.0)',
                 interactive: true,
             }
@@ -545,7 +546,65 @@
             style: style_ZONA1_10_0,
         });
         bounds_group.addLayer(layer_ZONA1_10);
+        function  pop_BBancario_11(feature, layer) {
+                if (feature.properties && feature.properties.NOMBRE) {
+                    if (feature.properties.LINK) {
+                        layer.bindPopup("<strong>" + feature.properties.NOMBRE  + "</strong><br /><iframe src='" + feature.properties.LINK + "' style='width: 305px; height: 500px; border: 2px solid #888888; margin-top:10px' scrolling='yes'></iframe><br /><a href='" + feature.properties.LINK + "' target='_blank'>Abrir en otra pestaña</a>");
+                    } else{
+                           layer.bindPopup("<strong>" + feature.properties.NOMBRE + "</strong>");
+                     }
+                }
+            }            
+            
+            
+
+        var pattern_BBancario_11_0 = new L.StripePattern({
+            weight: 0.29999999999999993,
+            spaceWeight: 2.0,
+            color: '#008cff',
+            opacity: 1.0,
+            spaceOpacity: 0,
+            angle: 225
+        });
+        pattern_BBancario_11_0.addTo(map);
+        function style_BBancario_11_0() {
+            return {
+                pane: 'pane_BBancario_11',
+                stroke: false,
+                fillOpacity: 1,
+                fillPattern: pattern_BBancario_11_0,
+                interactive: true,
+            }
+        }
+        function style_BBancario_11_1() {
+            return {
+                pane: 'pane_BBancario_11',
+                opacity: 1,
+                color: 'rgba(0,140,255,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_BBancario_11');
+        map.getPane('pane_BBancario_11').style.zIndex = 411;
+        map.getPane('pane_BBancario_11').style['mix-blend-mode'] = 'normal';
+        var layer_BBancario_11 = new L.geoJson.multiStyle(json_BBancario_11, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_BBancario_11',
+            layerName: 'layer_BBancario_11',
+            pane: 'pane_BBancario_11',
+            onEachFeature: pop_BBancario_11,
+            styles: [style_BBancario_11_0,style_BBancario_11_1,]
+        });
+        bounds_group.addLayer(layer_BBancario_11);
+        map.addLayer(layer_BBancario_11);
         var overlaysTree = [
+            {label: '<img src="legend/BBancario_11.png" /> Bº Bancario', layer: layer_BBancario_11},
             {label: '<img src="legend/ZONA1_10.png" /> ZONA 1', layer: layer_ZONA1_10},
             {label: '<img src="legend/ZONA2_9.png" /> ZONA 2', layer: layer_ZONA2_9},
             {label: '<img src="legend/ANEXO3_8.png" /> ANEXO 3', layer: layer_ANEXO3_8},
