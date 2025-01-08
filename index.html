@@ -116,24 +116,16 @@
         });
         layer_OSMStandard_0;
         map.addLayer(layer_OSMStandard_0);
-        function pop_SectoresacargodelaempresaSantaElena_1(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['SECTOR'] !== null ? autolinker.link(feature.properties['SECTOR'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['SERVICIO'] !== null ? autolinker.link(feature.properties['SERVICIO'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['LINK'] !== null ? autolinker.link(feature.properties['LINK'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
-			layer.on('popupopen', function(e) {
-				addClassToPopupIfMedia(content, e.popup);
-			});
-			layer.bindPopup(content, { maxHeight: 400 });
-        }
+        function  pop_SectoresacargodelaempresaSantaElena_1(feature, layer) {
+                    if (feature.properties && feature.properties.SECTOR) {
+                        if (feature.properties.LINK) {
+                            layer.bindPopup("<strong>" + feature.properties.SECTOR  + "</strong><br /><iframe src='" + feature.properties.LINK + "' style='width: 305px; height: 500px; border: 2px solid #888888; margin-top:10px' scrolling='yes'></iframe><br /><a href='" + feature.properties.LINK + "' target='_blank'>Abrir en otra pestaña</a>");
+                        } else{
+                               layer.bindPopup("<strong>" + feature.properties.SECTOR + "</strong>");
+                         }
+                    }
+                }            
+                  
 
         function style_SectoresacargodelaempresaSantaElena_1_0() {
             return {
