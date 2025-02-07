@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,9 +19,9 @@
             margin: 0;
         }
         </style>
-          <title>Higiene Urbana</title>
-          <!-- Icono -->
-          <link rel="icon" href="./images/favicon1.ico">
+        <title>Higiene Urbana</title>
+        <!-- Icono -->
+        <link rel="icon" href="./images/favicon1.ico">
     </head>
     <body>
         <div id="map">
@@ -46,6 +46,9 @@
         <script src="data/ZonaDesmalezamiento3_6.js"></script>
         <script src="data/ZonaDesmalezamiento2_7.js"></script>
         <script src="data/ZonaDesmalezamiento1_8.js"></script>
+        <script src="data/ANEXO3_9.js"></script>
+        <script src="data/ZONA2_10.js"></script>
+        <script src="data/ZONA1_11.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
@@ -113,15 +116,24 @@
         });
         layer_OSMStandard_0;
         map.addLayer(layer_OSMStandard_0);
-        function  pop_SectoresacargodelaempresaSantaElena_1(feature, layer) {
-                    if (feature.properties && feature.properties.SECTOR) {
-                        if (feature.properties.LINK) {
-                            layer.bindPopup("<strong>" + feature.properties.SECTOR  + "</strong><br /><iframe src='" + feature.properties.LINK + "' style='width: 305px; height: 500px; border: 2px solid #888888; margin-top:10px' scrolling='yes'></iframe><br /><a href='" + feature.properties.LINK + "' target='_blank'>Abrir en otra pestaña</a>");
-                        } else{
-                               layer.bindPopup("<strong>" + feature.properties.SECTOR + "</strong>");
-                         }
-                    }
-                } 
+        function pop_SectoresacargodelaempresaSantaElena_1(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['SECTOR'] !== null ? autolinker.link(feature.properties['SECTOR'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['SERVICIO'] !== null ? autolinker.link(feature.properties['SERVICIO'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['LINK'] !== null ? autolinker.link(feature.properties['LINK'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
+			layer.on('popupopen', function(e) {
+				addClassToPopupIfMedia(content, e.popup);
+			});
+			layer.bindPopup(content, { maxHeight: 400 });
+        }
 
         function style_SectoresacargodelaempresaSantaElena_1_0() {
             return {
@@ -131,9 +143,9 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 2.5, 
+                weight: 3.0, 
                 fill: true,
-                fillOpacity:  0.2,
+                fillOpacity: 0.3,
                 fillColor: 'rgba(202,2,14,1.0)',
                 interactive: true,
             }
@@ -169,7 +181,7 @@
         }
 
         var pattern_Zonasrealizadas_2_0 = new L.StripePattern({
-            weight: 1.2,
+            weight: 0.3,
             spaceWeight: 2.0,
             color: '#1a7618',
             opacity: 1.0,
@@ -194,8 +206,8 @@
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
-                weight: 1.5,
-                fillOpacity: 0.1,
+                weight: 2.0,
+                fillOpacity: 0,
                 interactive: true,
             }
         }
@@ -222,6 +234,7 @@
                     }
                 }
             }
+
         function style_ZonaDesmalezamiento6_3_0() {
             return {
                 pane: 'pane_ZonaDesmalezamiento6_3',
@@ -338,7 +351,6 @@
                     }
                 }
             }
-
         function style_ZonaDesmalezamiento3_6_0() {
             return {
                 pane: 'pane_ZonaDesmalezamiento3_6',
@@ -377,6 +389,7 @@
                     }
                 }
             }
+
 
         function style_ZonaDesmalezamiento2_7_0() {
             return {
@@ -446,7 +459,158 @@
         });
         bounds_group.addLayer(layer_ZonaDesmalezamiento1_8);
         map.addLayer(layer_ZonaDesmalezamiento1_8);
+        function pop_ANEXO3_9(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['SECTOR'] !== null ? autolinker.link(feature.properties['SECTOR'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ACTIVIDAD'] !== null ? autolinker.link(feature.properties['ACTIVIDAD'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
+			layer.on('popupopen', function(e) {
+				addClassToPopupIfMedia(content, e.popup);
+			});
+			layer.bindPopup(content, { maxHeight: 400 });
+        }
+
+        var pattern_ANEXO3_9_0 = new L.StripePattern({
+            weight: 0.9,
+            spaceWeight: 2.0,
+            color: '#ff2206',
+            opacity: 1.0,
+            spaceOpacity: 0,
+            angle: 315
+        });
+        pattern_ANEXO3_9_0.addTo(map);
+        function style_ANEXO3_9_0() {
+            return {
+                pane: 'pane_ANEXO3_9',
+                stroke: false,
+                fillOpacity: 1,
+                fillPattern: pattern_ANEXO3_9_0,
+                interactive: true,
+            }
+        }
+        function style_ANEXO3_9_1() {
+            return {
+                pane: 'pane_ANEXO3_9',
+                opacity: 1,
+                color: 'rgba(255,34,6,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 4.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_ANEXO3_9');
+        map.getPane('pane_ANEXO3_9').style.zIndex = 409;
+        map.getPane('pane_ANEXO3_9').style['mix-blend-mode'] = 'normal';
+        var layer_ANEXO3_9 = new L.geoJson.multiStyle(json_ANEXO3_9, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_ANEXO3_9',
+            layerName: 'layer_ANEXO3_9',
+            pane: 'pane_ANEXO3_9',
+            onEachFeature: pop_ANEXO3_9,
+            styles: [style_ANEXO3_9_0,style_ANEXO3_9_1,]
+        });
+        bounds_group.addLayer(layer_ANEXO3_9);
+        function pop_ZONA2_10(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['SECTOR'] !== null ? autolinker.link(feature.properties['SECTOR'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['SERVICIO'] !== null ? autolinker.link(feature.properties['SERVICIO'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
+			layer.on('popupopen', function(e) {
+				addClassToPopupIfMedia(content, e.popup);
+			});
+			layer.bindPopup(content, { maxHeight: 400 });
+        }
+
+        function style_ZONA2_10_0() {
+            return {
+                pane: 'pane_ZONA2_10',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(152,125,183,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_ZONA2_10');
+        map.getPane('pane_ZONA2_10').style.zIndex = 410;
+        map.getPane('pane_ZONA2_10').style['mix-blend-mode'] = 'normal';
+        var layer_ZONA2_10 = new L.geoJson(json_ZONA2_10, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_ZONA2_10',
+            layerName: 'layer_ZONA2_10',
+            pane: 'pane_ZONA2_10',
+            onEachFeature: pop_ZONA2_10,
+            style: style_ZONA2_10_0,
+        });
+        bounds_group.addLayer(layer_ZONA2_10);
+        function pop_ZONA1_11(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['SECTOR'] !== null ? autolinker.link(feature.properties['SECTOR'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['SERVICIO'] !== null ? autolinker.link(feature.properties['SERVICIO'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
+			layer.on('popupopen', function(e) {
+				addClassToPopupIfMedia(content, e.popup);
+			});
+			layer.bindPopup(content, { maxHeight: 400 });
+        }
+
+        function style_ZONA1_11_0() {
+            return {
+                pane: 'pane_ZONA1_11',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(164,113,88,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_ZONA1_11');
+        map.getPane('pane_ZONA1_11').style.zIndex = 411;
+        map.getPane('pane_ZONA1_11').style['mix-blend-mode'] = 'normal';
+        var layer_ZONA1_11 = new L.geoJson(json_ZONA1_11, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_ZONA1_11',
+            layerName: 'layer_ZONA1_11',
+            pane: 'pane_ZONA1_11',
+            onEachFeature: pop_ZONA1_11,
+            style: style_ZONA1_11_0,
+        });
+        bounds_group.addLayer(layer_ZONA1_11);
         var overlaysTree = [
+            {label: '<img src="legend/ZONA1_11.png" /> ZONA 1', layer: layer_ZONA1_11},
+            {label: '<img src="legend/ZONA2_10.png" /> ZONA 2', layer: layer_ZONA2_10},
+            {label: '<img src="legend/ANEXO3_9.png" /> ANEXO 3', layer: layer_ANEXO3_9},
             {label: '<img src="legend/ZonaDesmalezamiento1_8.png" /> Zona Desmalezamiento 1', layer: layer_ZonaDesmalezamiento1_8},
             {label: '<img src="legend/ZonaDesmalezamiento2_7.png" /> Zona Desmalezamiento 2', layer: layer_ZonaDesmalezamiento2_7},
             {label: '<img src="legend/ZonaDesmalezamiento3_6.png" /> Zona Desmalezamiento 3', layer: layer_ZonaDesmalezamiento3_6},
@@ -473,7 +637,7 @@
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['SECTOR'] !== null?String('<div style="color: #323232; font-size: 10pt; font-weight: bold; font-family: \'Arial\', sans-serif;">' + layer.feature.properties['SECTOR']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_SectoresacargodelaempresaSantaElena_1'});
+            layer.bindTooltip((layer.feature.properties['SECTOR'] !== null?String('<div style="color: #323232; font-size: 10pt; font-family: \'Arial\', sans-serif;">' + layer.feature.properties['SECTOR']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_SectoresacargodelaempresaSantaElena_1'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
