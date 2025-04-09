@@ -119,6 +119,9 @@
                     <tr>\
                         <td colspan="2"><strong>ENCARGADO</strong><br />' + (feature.properties['ENCARGADO'] !== null ? autolinker.link(String(feature.properties['ENCARGADO']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>REC BASURA</strong><br />' + (feature.properties['REC BASURA'] !== null ? autolinker.link(String(feature.properties['REC BASURA']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
 			layer.on('popupopen', function(e) {
@@ -183,6 +186,9 @@
                     <tr>\
                         <td colspan="2"><strong>ENCARGADO</strong><br />' + (feature.properties['ENCARGADO'] !== null ? autolinker.link(String(feature.properties['ENCARGADO']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>REC BASURA</strong><br />' + (feature.properties['REC BASURA'] !== null ? autolinker.link(String(feature.properties['REC BASURA']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
 			layer.on('popupopen', function(e) {
@@ -230,6 +236,9 @@
                     </tr>\
                     <tr>\
                         <td colspan="2"><strong>ENCARGADO</strong><br />' + (feature.properties['ENCARGADO'] !== null ? autolinker.link(String(feature.properties['ENCARGADO']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>REC BASURA</strong><br />' + (feature.properties['REC BASURA'] !== null ? autolinker.link(String(feature.properties['REC BASURA']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
