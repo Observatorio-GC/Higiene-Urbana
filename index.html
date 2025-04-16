@@ -41,6 +41,7 @@
         <script src="data/ANEXO3_1.js"></script>
         <script src="data/ZONA2_2.js"></script>
         <script src="data/ZONA1_3.js"></script>
+        <script src="data/BulevarCanteroAccesoSurSantaElena_4.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
@@ -117,10 +118,10 @@
                         <td colspan="2"><strong>ACTIVIDAD</strong><br />' + (feature.properties['ACTIVIDAD'] !== null ? autolinker.link(String(feature.properties['ACTIVIDAD']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2"><strong>ENCARGADO</strong><br />' + (feature.properties['ENCARGADO'] !== null ? autolinker.link(String(feature.properties['ENCARGADO']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="TAREAS" colspan="2"><strong>TAREAS</strong><br />' + (feature.properties['TAREAS'] !== null ? autolinker.link(String(feature.properties['TAREAS']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2"><strong>REC BASURA</strong><br />' + (feature.properties['REC BASURA'] !== null ? autolinker.link(String(feature.properties['REC BASURA']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>ENCARGADO</strong><br />' + (feature.properties['ENCARGADO'] !== null ? autolinker.link(String(feature.properties['ENCARGADO']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -156,7 +157,7 @@
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
-                weight: 4.0,
+                weight: 2.0,
                 fillOpacity: 0,
                 interactive: true,
             }
@@ -181,13 +182,10 @@
                         <td colspan="2"><strong>SECTOR</strong><br />' + (feature.properties['SECTOR'] !== null ? autolinker.link(String(feature.properties['SECTOR']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2"><strong>SERVICIO</strong><br />' + (feature.properties['SERVICIO'] !== null ? autolinker.link(String(feature.properties['SERVICIO']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="EMPRESA" colspan="2"><strong>EMPRESA</strong><br />' + (feature.properties['EMPRESA'] !== null ? autolinker.link(String(feature.properties['EMPRESA']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2"><strong>ENCARGADO</strong><br />' + (feature.properties['ENCARGADO'] !== null ? autolinker.link(String(feature.properties['ENCARGADO']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>REC BASURA</strong><br />' + (feature.properties['REC BASURA'] !== null ? autolinker.link(String(feature.properties['REC BASURA']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="MUNICIPIO" colspan="2"><strong>MUNICIPIO</strong><br />' + (feature.properties['MUNICIPIO'] !== null ? autolinker.link(String(feature.properties['MUNICIPIO']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -237,9 +235,6 @@
                     <tr>\
                         <td colspan="2"><strong>ENCARGADO</strong><br />' + (feature.properties['ENCARGADO'] !== null ? autolinker.link(String(feature.properties['ENCARGADO']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>REC BASURA</strong><br />' + (feature.properties['REC BASURA'] !== null ? autolinker.link(String(feature.properties['REC BASURA']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
 			layer.on('popupopen', function(e) {
@@ -277,7 +272,56 @@
         });
         bounds_group.addLayer(layer_ZONA1_3);
         map.addLayer(layer_ZONA1_3);
+        function pop_BulevarCanteroAccesoSurSantaElena_4(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2"><strong>Nombre</strong><br />' + (feature.properties['Nombre'] !== null ? autolinker.link(String(feature.properties['Nombre']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>Encargado</strong><br />' + (feature.properties['Encargado'] !== null ? autolinker.link(String(feature.properties['Encargado']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>Servicio</strong><br />' + (feature.properties['Servicio'] !== null ? autolinker.link(String(feature.properties['Servicio']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
+			layer.on('popupopen', function(e) {
+				addClassToPopupIfMedia(content, e.popup);
+			});
+			layer.bindPopup(content, { maxHeight: 400 });
+        }
+
+        function style_BulevarCanteroAccesoSurSantaElena_4_0() {
+            return {
+                pane: 'pane_BulevarCanteroAccesoSurSantaElena_4',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(134,12,196,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_BulevarCanteroAccesoSurSantaElena_4');
+        map.getPane('pane_BulevarCanteroAccesoSurSantaElena_4').style.zIndex = 404;
+        map.getPane('pane_BulevarCanteroAccesoSurSantaElena_4').style['mix-blend-mode'] = 'normal';
+        var layer_BulevarCanteroAccesoSurSantaElena_4 = new L.geoJson(json_BulevarCanteroAccesoSurSantaElena_4, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_BulevarCanteroAccesoSurSantaElena_4',
+            layerName: 'layer_BulevarCanteroAccesoSurSantaElena_4',
+            pane: 'pane_BulevarCanteroAccesoSurSantaElena_4',
+            onEachFeature: pop_BulevarCanteroAccesoSurSantaElena_4,
+            style: style_BulevarCanteroAccesoSurSantaElena_4_0,
+        });
+        bounds_group.addLayer(layer_BulevarCanteroAccesoSurSantaElena_4);
+        map.addLayer(layer_BulevarCanteroAccesoSurSantaElena_4);
         var overlaysTree = [
+            {label: '<img src="legend/BulevarCanteroAccesoSurSantaElena_4.png" /> Bulevar Cantero Acceso Sur (Santa Elena) ', layer: layer_BulevarCanteroAccesoSurSantaElena_4},
             {label: '<img src="legend/ZONA1_3.png" /> ZONA 1', layer: layer_ZONA1_3},
             {label: '<img src="legend/ZONA2_2.png" /> ZONA 2', layer: layer_ZONA2_2},
             {label: '<img src="legend/ANEXO3_1.png" /> ANEXO 3', layer: layer_ANEXO3_1},
