@@ -115,13 +115,10 @@
                         <td colspan="2"><strong>SECTOR</strong><br />' + (feature.properties['SECTOR'] !== null ? autolinker.link(String(feature.properties['SECTOR']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2"><strong>ACTIVIDAD</strong><br />' + (feature.properties['ACTIVIDAD'] !== null ? autolinker.link(String(feature.properties['ACTIVIDAD']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>EMPRESA</strong><br />' + (feature.properties['EMPRESA'] !== null ? autolinker.link(String(feature.properties['EMPRESA']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td class="visible-with-data" id="TAREAS" colspan="2"><strong>TAREAS</strong><br />' + (feature.properties['TAREAS'] !== null ? autolinker.link(String(feature.properties['TAREAS']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>ENCARGADO</strong><br />' + (feature.properties['ENCARGADO'] !== null ? autolinker.link(String(feature.properties['ENCARGADO']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>MUNICIPIO</strong><br />' + (feature.properties['MUNICIPIO'] !== null ? autolinker.link(String(feature.properties['MUNICIPIO']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -230,10 +227,10 @@
                         <td colspan="2"><strong>SECTOR</strong><br />' + (feature.properties['SECTOR'] !== null ? autolinker.link(String(feature.properties['SECTOR']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2"><strong>SERVICIO</strong><br />' + (feature.properties['SERVICIO'] !== null ? autolinker.link(String(feature.properties['SERVICIO']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>EMPRESA</strong><br />' + (feature.properties['EMPRESA'] !== null ? autolinker.link(String(feature.properties['EMPRESA']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2"><strong>ENCARGADO</strong><br />' + (feature.properties['ENCARGADO'] !== null ? autolinker.link(String(feature.properties['ENCARGADO']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>MUNICIPIO</strong><br />' + (feature.properties['MUNICIPIO'] !== null ? autolinker.link(String(feature.properties['MUNICIPIO']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
